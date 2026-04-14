@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: 'Cairo', system-ui, sans-serif;
+  --bg-primary: #f7f8fc;
+  --bg-secondary: #eef2ff;
+  --text-primary: #0f172a;
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --text-primary: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Cairo', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(34, 211, 238, 0.1), transparent 26%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(91, 92, 240, 0.18);
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+textarea,
+input,
+select {
+  @apply outline-none transition-all duration-200;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  @apply border-indigo-500 ring-4 ring-indigo-500/15;
+}
+
+button {
+  @apply select-none;
+}
+
+.bg-app {
+  background:
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(34, 211, 238, 0.12), transparent 28%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.35) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.28);
+  border-radius: 999px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
